@@ -1,82 +1,74 @@
+let cloths = document.getElementById("cloths");
+let reviews = document.getElementById("reviews");
+let contacts = document.getElementById("contacts");
+let blogs = document.getElementById("blogs");
 
-let home = document.getElementById("homes");
-let cloth = document.getElementById("cloths");
-let review = document.getElementById("reviews");
-let blog = document.getElementById("blogs");
-let contact = document.getElementById("contacts");
+cloths.addEventListener("click", function(){
+    cloths.style.color="red";
+    reviews.style.color="black";
+    contacts.style.color="black";
+    blogs.style.color="black";
+
+})
+
+reviews.addEventListener("click", function(){
+    cloths.style.color="black";
+    reviews.style.color="red";
+    contacts.style.color="black";
+    blogs.style.color="black";
+
+})
+
+blogs.addEventListener("click", function(){
+    cloths.style.color="black";
+    reviews.style.color="black";
+    contacts.style.color="black";
+    blogs.style.color="red";
+
+})
+
+
+contacts.addEventListener("click", function(){
+    cloths.style.color="black";
+    reviews.style.color="black";
+    contacts.style.color="red";
+    blogs.style.color="black";
+
+})
+
 let login = document.getElementById("login");
-let button = document.getElementById("btn");
-
-
-
- 
-
-cloth.addEventListener("click", function(){
-    home.style.color="black";
-    cloth.style.color="red";
-    review.style.color="black";
-    blog.style.color="black";
-    contact.style.color="black";
-
-
-})
-
-
-review.addEventListener("click", function(){
-    home.style.color="black";
-    cloth.style.color="black";
-    review.style.color="red";
-    blog.style.color="black";
-    contact.style.color="black";
-
-
-})
-
-
-blog.addEventListener("click", function(){
-    home.style.color="black";
-    cloth.style.color="black";
-    review.style.color="black";
-    blog.style.color="red";
-    contact.style.color="black";
-
-
-})
-
-
-contact.addEventListener("click", function(){
-    home.style.color="black";
-    cloth.style.color="black";
-    review.style.color="black";
-    blog.style.color="black";
-    contact.style.color="red";
-
-
-})
 
 login.addEventListener("click", function(){
-    document.getElementById("log").style.display="block"
+    let loginPage = document.querySelector(".loginPage").style.display="block";
+ 
 })
 
-button.addEventListener("click", function(){
-    let logName = document.getElementById("logName")
-    if(logName.value == ""){
-        alert("please Enter Email & Password")
-    }else{
-    alert("You Logged In");
-    document.getElementById("log").style.display="none";
-    }
+let loged = document.getElementById("loged");
 
+loged.addEventListener("click", function(){
+    let email = document.getElementById("email");
+    let pass = document.getElementById("pass");
+
+    if(email.value == "" || pass.value == ""){
+        alert("Please Enter Email Password")
+    }else{
+        alert("You Loged In")
+        document.querySelector(".loginPage").style.display="none";
+    }
 
 })
-function submit(){
 
-    let name = document.getElementById("name");
-    if(name.value == ""){
-        alert("Please Enter Detail")
+let submit = document.getElementById("submit");
+
+submit.addEventListener("click", function(){
+    console.log("Aa");
+    let names = document.getElementById("name");
+    let password = document.getElementById("pass");
+
+    console.log(names.value);
+    if(names.value == "" || password == ""){
+        alert("Please Enter Name and Password")
     }else{
-    alert("Thanks for joining "+" : " + name.value);
-    name.value=""
-    
+        alert("Thanks for connecting")
     }
-}
+})
